@@ -8,8 +8,8 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 
-		features = { "src/test/java/NewTour_logjn/features" },
-		glue = { "NewTour_logjn.stepDefination" },
+		features = { "src/test/java/yahooLogin/feature" },
+		glue = { "yahooLogin.stepDefination" },
 
 		monochrome = true, tags = {},
 
