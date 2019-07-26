@@ -30,12 +30,6 @@ import cucumber.api.junit.Cucumber;
 		plugin = {"pretty", "html:target/cucumber", "json:target/cucumber-reports/cucumber.json"}
 )
 
-
-
-
-
-
-
 public class MainRunner {
 
 }
