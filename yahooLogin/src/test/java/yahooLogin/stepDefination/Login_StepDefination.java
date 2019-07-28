@@ -5,7 +5,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -19,10 +20,12 @@ public class Login_StepDefination {
 
 	@Before()
 	public void setup() throws IOException {
-		System.setProperty("webdriver.chrome.driver", "C://Users//Dev_Programs//chromedriver.exe");
-		this.driver = new ChromeDriver();
+		System.setProperty("webdriver.chrome.driver","C://Users/Dev_Programs/IEDriverServer.exe");
+		this.driver =  new InternetExplorerDriver();
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
+		
+		
 	}
 
 	@After()
