@@ -27,7 +27,11 @@ import cucumber.api.junit.Cucumber;
 				//"json:target/cucumber-reports/CucumberTestReport.json" }, 
 		//plugin = ("json:target/cucumber-reports/CucumberTestReport.json")
 
-		plugin = {"pretty", "html:target/cucumber", "json:target/cucumber-reports/cucumber.json"}
+		//plugin = {"pretty", "html:target/cucumber", "json:target/cucumber-reports/cucumber.json"}
+		
+		 plugin = { "pretty", "json:target/cucumber-reports/Cucumber.json",
+				 "junit:target/cucumber-reports/Cucumber.xml",
+				 "html:target/cucumber-reports"}
 )
 
 public class MainRunner {
