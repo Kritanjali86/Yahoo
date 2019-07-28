@@ -5,8 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -17,11 +16,11 @@ import cucumber.api.java.en.When;
 
 public class Login_StepDefination {
 	WebDriver driver;
-
+	
 	@Before()
 	public void setup() throws IOException {
-		System.setProperty("webdriver.chrome.driver","C://Users/Dev_Programs/IEDriverServer.exe");
-		this.driver =  new InternetExplorerDriver();
+		System.setProperty("webdriver.chrome.driver","C://Users/new/git/Yahoo/yahooLogin/Resources/chromedriver.exe");
+		this.driver = new ChromeDriver();
 		this.driver.manage().window().maximize();
 		this.driver.manage().timeouts().pageLoadTimeout(5, TimeUnit.SECONDS);
 		
@@ -35,10 +34,13 @@ public class Login_StepDefination {
 
 	}
 
-	@Given("^User navigate to the <\"([^\"]*)\">$")
-	public void user_navigate_to_the(String url) throws Throwable {
-		driver.get(url);
+	@Given("^User navigate to the website$")
+	public void user_navigate_to_the_website() throws Throwable {
+		driver.get("http://www.newtours.demoaut.com/");
+	    
 	}
+
+	
 
 	@When("^User clicks on the login portal$")
 	public void user_clicks_on_the_login_portal() throws Throwable {
