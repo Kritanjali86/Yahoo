@@ -73,13 +73,6 @@
 				<version>2.19.1</version>
 			</plugin>
 
-			<plugin>
-				<groupId>net.masterthought</groupId>
-				<artifactId>maven-cucumber-reporting</artifactId>
-				<version>4.8.0</version>
-
-			</plugin>
-
 		</plugins>
 	</reporting>
 
