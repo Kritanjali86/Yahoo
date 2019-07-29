@@ -34,10 +34,9 @@ public class Login_StepDefination {
 
 	}
 
-	@Given("^User navigate to the website$")
-	public void user_navigate_to_the_website() throws Throwable {
-		driver.get("http://www.newtours.demoaut.com/");
-	    
+	@Given("^User navigate to the  \"([^\"]*)\"$")
+	public void user_navigate_to_the(String url) throws Throwable {
+	   driver.get(url);
 	}
 
 	
@@ -47,20 +46,24 @@ public class Login_StepDefination {
 		driver.findElement(By.name("login")).click();
 	}
 
-	@And("^User enters the <\"([^\"]*)\"> username$")
+
+	
+	
+	@And("^User enters the \"([^\"]*)\" username$")
 	public void user_enters_the_username(String username) throws Throwable {
 		// tab code
-		for (String windHandle : driver.getWindowHandles()) {
-			driver.switchTo().window(windHandle);
-		}
-		// send username keys
-		driver.findElement(By.name("userName")).sendKeys(username);
+				for (String windHandle : driver.getWindowHandles()) {
+					driver.switchTo().window(windHandle);
+					// send username keys
+					driver.findElement(By.name("userName")).sendKeys(username);
+				}
 	}
 
-	@And("^User enters the <\"([^\"]*)\"> password$")
+	@When("^User enters the \"([^\"]*)\" password$")
 	public void user_enters_the_password(String password) throws Throwable {
 		driver.findElement(By.name("password")).sendKeys(password);
 	}
+		
 
 	@Then("^User clicks on the login button$")
 	public void user_clicks_on_the_login_button() throws Throwable {
